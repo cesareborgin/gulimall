@@ -1,6 +1,4 @@
-/**
-  * Copyright 2019 bejson.com 
-  */
+
 package com.cesare.gulimall.product.vo;
 
 import lombok.Data;

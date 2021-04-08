@@ -17,8 +17,6 @@ import lombok.Data;
 @Data
 @TableName("pms_attr")
 public class AttrEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
-
 	/**
 	 * 属性id
 	 */
@@ -32,6 +30,10 @@ public class AttrEntity implements Serializable {
 	 * 是否需要检索[0-不需要，1-需要]
 	 */
 	private Integer searchType;
+	/**
+	 * 值类型[0-为单个值，1-可以选择多个值]
+	 */
+	private Integer valueType;
 	/**
 	 * 属性图标
 	 */
@@ -56,5 +58,8 @@ public class AttrEntity implements Serializable {
 	 * 快速展示【是否展示在介绍上；0-否 1-是】，在sku中仍然可以调整
 	 */
 	private Integer showDesc;
+
+//	@TableField(exist = false)
+//	private Long attrGroupId;
 
 }
