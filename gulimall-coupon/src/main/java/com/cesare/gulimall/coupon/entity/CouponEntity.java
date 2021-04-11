@@ -10,10 +10,7 @@ import lombok.Data;
 
 /**
  * 优惠券信息
- * 
- * @author luzhengsheng
- * @email 1844567512@qq.com
- * @date 2021-04-03 13:12:22
+ *
  */
 @Data
 @TableName("sms_coupon")

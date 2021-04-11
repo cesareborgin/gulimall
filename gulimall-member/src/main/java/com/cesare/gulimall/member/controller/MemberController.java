@@ -39,9 +39,10 @@ public class MemberController {
         MemberEntity memberEntity = new MemberEntity();
         memberEntity.setNickname("张三");
 
-        R membercoupons = couponFeignService.memberCoupons();
+        R membercoupons = couponFeignService.membercoupons();
         return R.ok().put("member",memberEntity).put("coupons",membercoupons.get("coupons"));
     }
+
 
     /**
      * 列表
@@ -61,7 +62,7 @@ public class MemberController {
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("member:member:info")
     public R info(@PathVariable("id") Long id){
-		MemberEntity member = memberService.getById(id);
+        MemberEntity member = memberService.getById(id);
 
         return R.ok().put("member", member);
     }
@@ -72,7 +73,7 @@ public class MemberController {
     @RequestMapping("/save")
     //@RequiresPermissions("member:member:save")
     public R save(@RequestBody MemberEntity member){
-		memberService.save(member);
+        memberService.save(member);
 
         return R.ok();
     }
@@ -83,7 +84,7 @@ public class MemberController {
     @RequestMapping("/update")
     //@RequiresPermissions("member:member:update")
     public R update(@RequestBody MemberEntity member){
-		memberService.updateById(member);
+        memberService.updateById(member);
 
         return R.ok();
     }
@@ -94,7 +95,7 @@ public class MemberController {
     @RequestMapping("/delete")
     //@RequiresPermissions("member:member:delete")
     public R delete(@RequestBody Long[] ids){
-		memberService.removeByIds(Arrays.asList(ids));
+        memberService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

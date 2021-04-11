@@ -20,9 +20,9 @@ import com.cesare.common.utils.R;
 /**
  * 首页轮播广告
  *
- * @author luzhengsheng
- * @email 1844567512@qq.com
- * @date 2021-04-03 13:12:22
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 @RestController
 @RequestMapping("coupon/homeadv")

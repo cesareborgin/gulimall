@@ -6,7 +6,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.cesare.gulimall.coupon.entity.CouponEntity;
 import com.cesare.gulimall.coupon.service.CouponService;
@@ -18,9 +22,9 @@ import com.cesare.common.utils.R;
 /**
  * 优惠券信息
  *
- * @author luzhengsheng
- * @email 1844567512@qq.com
- * @date 2021-04-03 13:12:22
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 @RefreshScope
 @RestController
@@ -28,21 +32,14 @@ import com.cesare.common.utils.R;
 public class CouponController {
     @Autowired
     private CouponService couponService;
-    @Value("${coupon.user.name}")
-    private String name;
-    @Value("${coupon.user.age}")
-    private Integer age;
 
-    @RequestMapping(value = "/member/list",method = RequestMethod.GET)
-    public R memberCoupons(){
+
+
+    @RequestMapping("/member/list")
+    public R membercoupons(){
         CouponEntity couponEntity = new CouponEntity();
-        couponEntity.setCouponName("满一百减十");
+        couponEntity.setCouponName("满100减10");
         return R.ok().put("coupons",Arrays.asList(couponEntity));
-    }
-
-    @RequestMapping("/test")
-    public R test(){
-        return R.ok().put("name",name).put("age",age);
     }
 
     /**
